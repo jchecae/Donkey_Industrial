@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="DONKEY Industrial — Estudio industrial de producto en Granada. Ingeniería aplicada, diseño industrial, utillaje y prototipado.">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8faf8;color:#24282f;font:16px/1.45 "Archivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+::selection{background:#b86a3d;color:#f8faf8}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4px}
+[data-rail]::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:10;min-height:72px;border-bottom:1px solid rgba(36,40,47,.18);background:rgba(248,250,248,.94);backdrop-filter:blur(12px)">
+  <div style="width:min(calc(100% - 48px),1440px);margin:auto;min-height:72px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;padding:10px 0">
+    <a href="#estudio" style="display:flex;flex-direction:column;gap:4px;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1">DONKEY<span data-t="desc" style="color:#68716d;font-size:8px;font-weight:650;letter-spacing:.15em;text-transform:uppercase">Estudio industrial de producto</span></a>
+    <nav style="display:flex;gap:20px;margin-left:auto;flex-wrap:wrap">
+      <a href="#estudio" data-t="nav1" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Estudio</a>
+      <a href="#capacidades" data-t="nav2" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Capacidades</a>
+      <a href="#taller" data-t="nav3" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Taller</a>
+      <a href="#proyectos" data-t="nav4" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Proyectos</a>
+      <a href="#soluciones" data-t="nav5" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Soluciones</a>
+      <a href="#contacto" data-t="nav6" style="font-size:12px;font-weight:700;color:#68716d" style-hover="color:#24282f">Contacto</a>
+    </nav>
+    <div style="display:flex;gap:3px;padding-left:14px;border-left:1px solid rgba(36,40,47,.18)">
+      <button data-lang-btn="es" onClick="{{setEs}}" style="border:0;background:transparent;cursor:pointer;padding:5px;color:#b86a3d;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.09em">ES</button>
+      <button data-lang-btn="en" onClick="{{setEn}}" style="border:0;background:transparent;cursor:pointer;padding:5px;color:#68716d;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.09em">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+<div data-shell="" style="width:min(calc(100% - 48px),1440px);margin:auto">
+  <section id="estudio" style="min-height:min(790px,calc(100vh - 72px));display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(36,40,47,.18)">
+    <div style="flex:1.18 1 520px;min-width:min(100%,520px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:clamp(58px,8vw,130px) clamp(35px,7vw,104px) 36px 0">
+      <div>
+        <span data-t="eyebrow" style="color:#b86a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Ingeniería mecánica · Diseño de producto · Taller</span>
+        <h1 data-h="hero" style="max-width:800px;margin:22px 0 30px;font-size:clamp(48px,6vw,90px);font-weight:720;letter-spacing:-.048em;line-height:.94">Diseño industrial, ingeniería aplicada y prototipos para problemas que tienen que funcionar <em style="font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#b86a3d">fuera de la pantalla.</em></h1>
+        <p data-t="intro" style="max-width:530px;margin:0;color:#68716d;font-size:clamp(17px,1.65vw,22px);line-height:1.35;letter-spacing:-.026em">Convertimos requerimientos, restricciones y contexto real en piezas, útiles, productos y sistemas que se puedan fabricar, usar y mantener.</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(36,40,47,.18)">
+        <span data-t="code" style="font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">DI / 01 — Granada, España</span>
+        <p data-t="herof" style="max-width:330px;margin:0;color:#68716d;font-size:11px">La forma importa. La tolerancia también. Y el presupuesto, aunque no salga en el render.</p>
+      </div>
+    </div>
+    <div style="flex:.82 1 340px;min-width:min(100%,340px);position:relative;min-height:520px;overflow:hidden;border-left:1px solid rgba(36,40,47,.18);background:#24282f;color:#f8faf8" style-before="content:'';position:absolute;inset:28px;border:1px solid rgba(248,250,248,.25)">
+      <span style="position:absolute;top:44px;right:45px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">REF. DI-001 / 0.15</span>
+      <div style="position:absolute;top:50%;left:50%;width:min(31vw,440px);aspect-ratio:1;transform:translate(-48%,-44%) rotate(-21deg);border:1px solid rgba(248,250,248,.8);border-radius:10px;background:linear-gradient(116deg,transparent 48%,#f8faf8 48.3% 49%,transparent 49.3%),radial-gradient(circle at 68% 32%,#859f56 0 5%,transparent 5.3%),radial-gradient(circle at 34% 69%,#b86a3d 0 11%,transparent 11.3%)" style-before="content:'';position:absolute;top:29%;left:29%;width:42%;height:42%;border:1px solid #f8faf8;border-radius:50%"></div>
+      <p data-t="caption" style="position:absolute;bottom:43px;left:43px;max-width:210px;margin:0;color:rgba(248,250,248,.75);font-size:11px">Imagen de prototipo / taller / detalle técnico. Sustituir por imagen propia.</p>
+    </div>
+  </section>
+  <section id="capacidades" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
+    <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">01<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
+    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+      <h2 data-h="ctitle" style="max-width:900px;margin:0 0 36px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Un sistema de capacidades para llevar una idea <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">hasta la realidad.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
+        <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">01 / DI</b><h3 data-t="c1" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Diseño industrial y desarrollo de producto.&nbsp;<br>Identidad de marca</h3><p data-t="c1p" style="margin:0;color:#68716d;font-size:13px">Marca, función, forma y fabricación pensados como un conjunto.</p></article>
+        <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">02 / CAD</b><h3 data-t="c2" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Ingeniería aplicada, CAD 3D y software</h3><p data-t="c2p" style="margin:0;color:#68716d;font-size:13px">Modelado, conjuntos, mecanismos y herramientas de software propias para tomar decisiones con base.</p></article>
+        <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">03 / PRT</b><h3 data-t="c3" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Prototipado rápido</h3><p data-t="c3p" style="margin:0;color:#68716d;font-size:13px">Piezas y ensayos de concepto para aprender antes de comprometer fabricación.</p></article>
+        <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">04 / JIG</b><h3 data-t="c4" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Realidad industrial</h3><p data-t="c4p" style="margin:0;color:#68716d;font-size:13px">Útiles, soportes, pinzas, bancadas y poka-yokes que ordenan el proceso y reducen el error.</p></article>
+        
+        
+      </div>
+    </div>
+  </section>
+  <section id="taller" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
+    <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">02<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
+    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+      <h2 data-h="ttitle" style="max-width:900px;margin:0 0 30px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Estudio pequeño. Taller propio. <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">Red de fabricación.</span></h2>
+      <div style="display:flex;flex-wrap:wrap;gap:24px 48px;margin-bottom:56px">
+        <p data-t="tp1" style="flex:1 1 340px;max-width:520px;margin:0;font-size:17px;line-height:1.45;letter-spacing:-.015em">DONKEY Industrial es un estudio de ingeniería aplicada y diseño industrial con base en Granada. Escaneamos, modelamos, imprimimos, renderizamos y montamos en casa; lo que pide mecanizado, corte o acabados sale a una red de proveedores contrastada.</p>
+        <p data-t="tp2" style="flex:1 1 340px;max-width:520px;margin:0;color:#68716d;font-size:15px;line-height:1.5">Venimos del utillaje y del desarrollo de producto: fixtures, soportes y soluciones que tienen que funcionar un lunes a las siete. Y cuando el producto lo pide, cuidamos también la capa de marca: nombre, gráfica aplicada e imagen.</p>
+      </div>
+      <h3 data-t="teq" style="margin:0 0 14px;color:#b86a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Medios y taller</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
+        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-01</b><h3 data-t="eq1" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Escáner 3D</h3><p data-t="eq1p" style="margin:0;color:#68716d;font-size:13px">Captura de geometría real: piezas, moldes y entornos.</p></article>
+        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-02</b><h3 data-t="eq2" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Impresión 3D</h3><p data-t="eq2p" style="margin:0;color:#68716d;font-size:13px">FDM y resina para prototipos, útiles y preseries cortas.</p></article>
+        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-03</b><h3 data-t="eq3" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">CAD paramétrico</h3><p data-t="eq3p" style="margin:0;color:#68716d;font-size:13px">Modelado, ensamblajes y planos de fabricación.</p></article>
+        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-04</b><h3 data-t="eq4" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Render de producto</h3><p data-t="eq4p" style="margin:0;color:#68716d;font-size:13px">Imagen para decidir y comunicar antes de fabricar.</p></article>
+        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-05</b><h3 data-t="eq5" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Red de mecanizado</h3><p data-t="eq5p" style="margin:0;color:#68716d;font-size:13px">Proveedores de CNC, corte, chapa y acabados.</p></article>
+        
+      </div>
+      <h3 data-t="texp" style="margin:52px 0 0;color:#b86a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Experiencia</h3>
+      <div style="margin-top:14px;border-top:1px solid #24282f">
+        <div style="display:flex;gap:18px;padding:17px 0 19px;border-bottom:1px solid rgba(36,40,47,.18)"><b style="flex:0 0 64px;color:#b86a3d;font-size:11px;font-weight:800">EXP-01</b><div><h3 data-t="ex1" style="margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.024em">Útiles y fixtures</h3><p data-t="ex1p" style="margin:0;color:#68716d;font-size:14px">Posicionado, amarre, verificación y poka-yoke.</p></div></div>
+        <div style="display:flex;gap:18px;padding:17px 0 19px;border-bottom:1px solid rgba(36,40,47,.18)"><b style="flex:0 0 64px;color:#b86a3d;font-size:11px;font-weight:800">EXP-02</b><div><h3 data-t="ex2" style="margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.024em">Desarrollo de producto</h3><p data-t="ex2p" style="margin:0;color:#68716d;font-size:14px">Del requerimiento a la preserie.</p></div></div>
+        <div style="display:flex;gap:18px;padding:17px 0 19px;border-bottom:1px solid rgba(36,40,47,.18)"><b style="flex:0 0 64px;color:#b86a3d;font-size:11px;font-weight:800">EXP-03</b><div><h3 data-t="ex3" style="margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.024em">Ingeniería inversa</h3><p data-t="ex3p" style="margin:0;color:#68716d;font-size:14px">De la pieza física al modelo fabricable.</p></div></div>
+        <div style="display:flex;gap:18px;padding:17px 0 19px;border-bottom:1px solid rgba(36,40,47,.18)"><b style="flex:0 0 64px;color:#b86a3d;font-size:11px;font-weight:800">EXP-04</b><div><h3 data-t="ex4" style="margin:0 0 6px;font-size:17px;font-weight:700;letter-spacing:-.024em">Marca y gráfica de producto</h3><p data-t="ex4p" style="margin:0;color:#68716d;font-size:14px">Identidad, marcaje y presentación técnica.</p></div></div>
+      </div>
+      <span data-t="inv" style="display:inline-block;margin-top:26px;padding:6px 9px;border:1px solid rgba(36,40,47,.35);color:#68716d;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Inventario · REV 0</span>
+    </div>
+  </section>
+  <section id="proyectos" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
+    <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">03<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
+    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+        <h2 data-h="wtitle" style="max-width:760px;margin:0;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">El trabajo cuenta más <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">que el discurso.</span></h2>
+        <div style="display:flex;gap:8px">
+          <button onClick="{{prev}}" aria-label="Anterior" style="width:44px;height:44px;border:1px solid #24282f;background:transparent;cursor:pointer;font-family:inherit;font-size:16px;color:#24282f" style-hover="background:#e9ede8">←</button>
+          <button onClick="{{next}}" aria-label="Siguiente" style="width:44px;height:44px;border:1px solid #24282f;background:transparent;cursor:pointer;font-family:inherit;font-size:16px;color:#24282f" style-hover="background:#e9ede8">→</button>
+        </div>
+      </div>
+      <div ref="{{railRef}}" data-rail="" style="position:relative;display:flex;align-items:center;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px calc((100% - min(540px,72%)) / 2) 28px;scrollbar-width:none">
+        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-01" shape="rect" placeholder="Foto real: utillaje o fixture en uso" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
+          <figcaption style="padding:16px 18px 20px"><span data-t="w1t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Utillaje / Fixture</span><p data-t="w1" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Fixture de posicionado y amarre para verificación/fabricación de pieza.<br></p><div data-srcsel="work-01" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-02" shape="rect" placeholder="Foto real: prototipo impreso" style="display: block; width: 100%; height: 350px" hint-size="100%,320px"></x-import>
+          <figcaption style="padding:16px 18px 20px"><span data-t="w2t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Prototipo</span><p data-t="w2" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Prototipo funcional impreso&nbsp; para validar montaje y tolerancias antes de comprometer molde.</p><div data-srcsel="work-02" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-03" shape="rect" placeholder="Foto real: escaneo 3D de pieza" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
+          <figcaption style="padding:16px 18px 20px"><span data-t="w3t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Escaneo 3D</span><p data-t="w3" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Captura de geometría real de una pieza existente para ingeniería inversa y adaptación.</p><div data-srcsel="work-03" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-04" shape="rect" placeholder="Imagen: render de producto" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
+          <figcaption style="padding:16px 18px 20px"><span data-t="w4t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Render</span><p data-t="w4" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Render de producto para decidir acabados y comunicar antes de fabricar.</p><div data-srcsel="work-04" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
+          
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-05" shape="rect" placeholder="Imagen: identidad gráfica de producto" style="display: block; height: 350px; width: 100%" hint-size="100%,320px"></x-import><figcaption style="padding:16px 18px 20px"><span data-t="w5t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Identidad gráfica</span><p data-t="w5" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Identidad gráfica: naming y gráfica aplicada a la identidad corporativa.</p><div data-srcsel="work-05" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section id="soluciones" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
+    <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">04<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
+    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+      <h2 data-h="vtitle" style="max-width:900px;margin:0 0 36px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Trabajo concreto para decisiones que no admiten <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">demasiada teoría.</span></h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
+        <article style="flex:1.4 1 380px;min-height:265px;padding:25px;background:#24282f;color:#f8faf8"><span data-t="om1" style="color:#859f56;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Pre-estudio / 01</span><h3 data-t="o1" style="max-width:440px;margin:50px 0 10px;font-size:clamp(23px,2.2vw,34px);font-weight:700;line-height:1;letter-spacing:-.036em">Pre-estudio de viabilidad</h3><p data-t="o1p" style="margin:0;color:rgba(248,250,248,.68);font-size:13px">Paquetes cerrados para revisar función, usuario, fabricación, costes de partida, referencias y riesgos. Una primera respuesta honesta antes de abrir un proyecto completo.</p></article>
+        <article style="flex:1 1 300px;min-height:265px;padding:25px;background:#f8faf8"><span data-t="om2" style="color:#859f56;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Solución / 02</span><h3 data-t="o2" style="max-width:440px;margin:50px 0 10px;font-size:clamp(23px,2.2vw,34px);font-weight:700;line-height:1;letter-spacing:-.036em">Diseño a medida: experiencia en I+D e industria</h3><p data-t="o2p" style="margin:0;color:#68716d;font-size:13px">Proyectos de I+D, accesorios y elementos de entrenamiento, soportes, adaptaciones ergonómicas y productos que se ganan su sitio cuando se usan de verdad.</p></article>
+        <article style="flex:1 1 300px;min-height:265px;padding:25px;background:#f8faf8"><span data-t="om3" style="color:#859f56;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Marca / 03</span><h3 data-t="o3" style="max-width:440px;margin:50px 0 10px;font-size:clamp(23px,2.2vw,34px);font-weight:700;line-height:1;letter-spacing:-.036em">Identidad de marca y producto</h3><p data-t="o3p" style="margin:0;color:#68716d;font-size:13px">Naming, posicionamiento, narrativa y dirección visual cuando el objeto y la marca deben sostener el mismo criterio.</p></article>
+        <article style="flex:1.4 1 380px;min-height:265px;padding:25px;background:#e9ede8"><span data-t="om4" style="color:#859f56;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Puente / 04</span><h3 data-t="o4" style="max-width:440px;margin:50px 0 10px;font-size:clamp(23px,2.2vw,34px);font-weight:700;line-height:1;letter-spacing:-.036em">Puente técnico para fabricación</h3><p data-t="o4p" style="margin:0;color:#68716d;font-size:13px">Preparación técnica para dialogar con talleres, proveedores y fabricantes sin entregar una idea a medio traducir.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+<section id="contacto" style="position:relative;overflow:hidden;padding:clamp(88px,12vw,170px) 0 56px;background:#24282f;color:#f8faf8" style-after="content:'';position:absolute;right:-9vw;bottom:-33vw;width:min(47vw,680px);aspect-ratio:1;border:1px solid rgba(248,250,248,.25);border-radius:50%">
+  <div style="position:relative;z-index:1;width:min(calc(100% - 48px),1440px);margin:auto;display:flex;flex-wrap:wrap;gap:32px">
+    <div style="flex:0 0 200px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">05<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
+    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+      <h2 data-h="contact" style="max-width:780px;margin:0 0 24px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Si hay una cosa que debe funcionar, merece empezar <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">bien pensada.</span></h2>
+      <p data-t="contactp" style="max-width:500px;margin:0;color:rgba(248,250,248,.68);font-size:18px">DONKEY Industrial trabaja desde Granada, con proyectos que no dependen demasiado del código postal.</p>
+      <a href="mailto:hola@donkeyindustrial.com" style="display:inline-block;margin-top:34px;padding-bottom:6px;border-bottom:1px solid #b86a3d;font-size:clamp(21px,2.7vw,38px);letter-spacing:-.03em" style-hover="color:#859f56;border-bottom-color:#859f56">hola@donkeyindustrial.com</a>
+      <div style="display:flex;flex-wrap:wrap;gap:11px 24px;margin-top:66px;color:rgba(248,250,248,.55);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase"><span data-t="place">Granada / Andalucía / España</span><span data-t="services">Ingeniería aplicada · Diseño industrial · Prototipado</span></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer style="padding:34px 0 26px;background:#24282f;color:#f8faf8">
+  <div style="width:min(calc(100% - 48px),1440px);margin:auto">
+    <div style="margin:8px 0 30px;font-size:clamp(38px,7.4vw,130px);font-weight:800;letter-spacing:-.045em;line-height:.85;white-space:nowrap">DONKEY <span style="font-weight: 500; font-family: Helvetica; font-size: 0.8em">INDUSTRIAL</span></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(248,250,248,.2);font-size:11px">
+      <span data-t="descf" style="font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">Estudio industrial de producto</span>
+      <span data-t="claim" style="color:rgba(248,250,248,.58);font:italic 14px Georgia,'Times New Roman',serif">Bien pensado. Bien resuelto.</span>
+      <a href="#estudio" data-t="top" style="font-weight:700">Volver arriba</a>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Idioma&quot;},&quot;selectorVisible&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Carrusel&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rail = React.createRef();
+    this.originals = null;
+    const S = '<span style="font-family:Georgia,\'Times New Roman\',serif;font-weight:400;font-style:italic;color:#b86a3d">';
+    this.EN = {
+      desc:'Industrial product studio', descf:'Industrial product studio',
+      nav1:'Studio', nav2:'Capabilities', nav3:'Workshop', nav4:'Projects', nav5:'Solutions', nav6:'Contact',
+      eyebrow:'Mechanical engineering · Product design · Workshop',
+      hero:'Industrial design, applied engineering and prototypes for problems that need to work <em style="font-family:Georgia,\'Times New Roman\',serif;font-weight:400;color:#b86a3d">beyond the screen.</em>',
+      intro:'We turn requirements, constraints and real-world context into parts, tools, products and systems that can be made, used and maintained.',
+      code:'DI / 01 — Granada, Spain',
+      herof:'Form matters. So does tolerance. And the budget, even when it is not in the render.',
+      caption:'Prototype / workshop / technical detail image. Replace with original image.',
+      ctitle:'A connected set of capabilities to take an idea '+S+'into reality.</span>',
+      c1:'Industrial design and product development', c1p:'Function, form, use and manufacture considered as one thing, with DFM from the first sketch.',
+      c2:'Applied engineering, 3D CAD and software', c2p:'Modelling, assemblies, mechanisms and in-house software tools for grounded decisions.',
+      c3:'Rapid prototyping', c3p:'Parts and concept tests to learn before committing to manufacture.',
+      c4:'Custom jigs and fixturing', c4p:'Fixtures, supports, grippers, benches and poka-yokes that bring order to a process and reduce error.',
+      c5:'Reverse engineering and improvement', c5p:'Understanding an existing part to replace it, adapt it or improve how it behaves in service.',
+      c6:'Manufacturing documentation', c6p:'GD&T drawings, breakdowns and specifications so execution does not depend on interpretation.',
+      ttitle:'Small studio. Own workshop. '+S+'Manufacturing network.</span>',
+      tp1:'DONKEY Industrial is an applied engineering and industrial design studio based in Granada. We scan, model, print, render and assemble in-house; whatever calls for machining, cutting or finishing goes out to a proven network of suppliers.',
+      tp2:'We come from jigs and product development: fixtures, supports and solutions that have to work on a Monday at seven. And when the product calls for it, we also take care of the brand layer: name, applied graphics and image.',
+      teq:'Equipment & workshop',
+      eq1:'3D scanner', eq1p:'Capture of real geometry: parts, moulds and environments.',
+      eq2:'3D printing', eq2p:'FDM and resin for prototypes, jigs and short pre-series.',
+      eq3:'Parametric CAD', eq3p:'Modelling, assemblies and manufacturing drawings.',
+      eq4:'Product rendering', eq4p:'Images to decide and communicate before manufacturing.',
+      eq5:'Machining network', eq5p:'CNC, cutting, sheet-metal and finishing suppliers.',
+      eq6:'Assembly bench', eq6p:'Tooling, functional testing and fine adjustment.',
+      texp:'Experience',
+      ex1:'Jigs and fixtures', ex1p:'Positioning, clamping, verification and poka-yoke.',
+      ex2:'Product development', ex2p:'From requirement to pre-series.',
+      ex3:'Reverse engineering', ex3p:'From physical part to manufacturable model.',
+      ex4:'Product brand and graphics', ex4p:'Identity, marking and technical presentation.',
+      inv:'Inventory · REV 0',
+      wtitle:'The work says more '+S+'than the pitch.</span>',
+      w1t:'Jig / Fixture', w1:'Positioning and clamping fixture for part verification. Repeatable, independent of anyone\'s hands.',
+      w2t:'Prototype', w2:'Functional resin-printed prototype to validate assembly and tolerances before committing to a mould.',
+      w3t:'3D scan', w3:'Real-geometry capture of an existing part for reverse engineering and adaptation.',
+      w4t:'Render', w4:'Product rendering to decide finishes and communicate before manufacturing.',
+      w5t:'Graphic identity', w5:'Product graphic identity: naming, marking and applied graphics on the part.',
+      vtitle:'Concrete work for decisions that do not allow '+S+'too much theory.</span>',
+      om1:'Pre-study / 01', om2:'Solution / 02', om3:'Brand / 03', om4:'Bridge / 04',
+      o1:'Feasibility pre-study', o1p:'Fixed-scope studies covering function, user, manufacturing, early costs, references and risks. An honest first answer before a full project begins.',
+      o2:'Custom design: R&D and sport experience', o2p:'R&D projects, training accessories and equipment, supports, ergonomic adaptations and products that earn their place through actual use.',
+      o3:'Brand and product identity', o3p:'Naming, positioning, narrative and visual direction when object and brand must hold the same standard.',
+      o4:'Technical bridge to manufacturing', o4p:'Technical preparation for useful conversations with workshops, suppliers and manufacturers — without handing over an untranslated idea.',
+      contact:'If something needs to work, it deserves to begin '+S+'well thought through.</span>',
+      contactp:'DONKEY Industrial works from Granada, on projects that do not depend too much on postcode.',
+      place:'Granada / Andalusia / Spain', services:'Applied engineering · Industrial design · Prototyping',
+      claim:'Well thought. Well resolved.', top:'Back to top'
+    };
+  }
+  componentDidMount(){
+    const l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap';
+    document.head.appendChild(l);
+    this.bindRail();
+    if ((this.props.defaultLang ?? 'es') === 'en') setTimeout(() => this.setLang('en'), 0);
+  }
+  setLang(lng){
+    if (!this.originals){
+      this.originals = {};
+      document.querySelectorAll('[data-t],[data-h]').forEach(e => this.originals[e.dataset.t || e.dataset.h] = e.innerHTML);
+    }
+    document.querySelectorAll('[data-t]').forEach(e => {
+      const k = e.dataset.t;
+      if (lng === 'en' && this.EN[k]) e.textContent = this.EN[k]; else if (this.originals[k] != null) e.innerHTML = this.originals[k];
+    });
+    document.querySelectorAll('[data-h]').forEach(e => {
+      const k = e.dataset.h;
+      if (lng === 'en' && this.EN[k]) e.innerHTML = this.EN[k]; else if (this.originals[k] != null) e.innerHTML = this.originals[k];
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(b => b.style.color = b.dataset.langBtn === lng ? '#b86a3d' : '#68716d');
+    this.lang = lng;
+    this.applySrcModes();
+    document.documentElement.lang = lng;
+    document.title = lng === 'en' ? 'DONKEY Industrial — Well thought. Well resolved.' : 'DONKEY Industrial — Bien pensado. Bien resuelto.';
+  }
+  cards(){ return this.rail.current ? [...this.rail.current.querySelectorAll('[data-card]')] : []; }
+  applySrcModes(){
+    const modes = JSON.parse(localStorage.getItem('donkey-src-mode') || '{}');
+    const N = (this.lang || 'es') === 'en'
+      ? {real: 'Real project image.', ia: 'AI-generated image to protect the client\'s design.'}
+      : {real: 'Imagen y proyecto reales.', ia: 'Imagen creada con IA para proteger el diseño del cliente.'};
+    document.querySelectorAll('[data-srcsel]').forEach(w => {
+      const m = modes[w.dataset.srcsel] || 'real';
+      w.querySelectorAll('[data-opt]').forEach(b => {
+        const on = b.dataset.opt === m;
+        b.style.color = on ? '#f8faf8' : '#68716d';
+        b.style.background = on ? '#24282f' : 'transparent';
+      });
+      const note = w.querySelector('[data-note]'); if (note) note.textContent = N[m];
+      const grp = w.querySelector('[data-opt]') && w.querySelector('[data-opt]').parentElement;
+      if (grp) grp.style.display = (this.props.selectorVisible ?? true) ? 'inline-flex' : 'none';
+    });
+  }
+  setSrcMode(id, mode){
+    const s = JSON.parse(localStorage.getItem('donkey-src-mode') || '{}');
+    s[id] = mode;
+    localStorage.setItem('donkey-src-mode', JSON.stringify(s));
+    this.applySrcModes();
+  }
+  centerIndex(){
+    const r = this.rail.current, mid = r.scrollLeft + r.clientWidth / 2;
+    let best = 0, bd = 1e9;
+    this.cards().forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid);
+      if (d < bd){ bd = d; best = i; }
+    });
+    return best;
+  }
+  goTo(i){
+    const r = this.rail.current, cs = this.cards(); if (!r || !cs.length) return;
+    const c = cs[Math.max(0, Math.min(cs.length - 1, i))];
+    r.scrollTo({left: c.offsetLeft - (r.clientWidth - c.clientWidth) / 2, behavior: 'smooth'});
+  }
+  setupLoop(){
+    const r = this.rail.current, cs = this.cards();
+    if (!r || r.dataset.loop) return;
+    if (cs.length < 2 || !cs[0].querySelector('image-slot')){ setTimeout(() => this.setupLoop(), 200); return; }
+    r.dataset.loop = '1';
+    this.buildClones();
+    ['pointerdown','wheel','touchstart'].forEach(ev => r.addEventListener(ev, () => this.userMoved = true, {passive: true, once: true}));
+    r.addEventListener('drop', () => setTimeout(() => this.buildClones(), 500));
+    if ('onscrollend' in r) r.addEventListener('scrollend', () => this.normalize());
+    else r.addEventListener('scroll', () => { clearTimeout(this._nt); this._nt = setTimeout(() => this.normalize(), 140); }, {passive: true});
+    this.recenter(8);
+    addEventListener('load', () => this.recenter(4));
+  }
+  buildClones(){
+    const r = this.rail.current; if (!r) return;
+    r.querySelectorAll('[data-clone]').forEach(c => c.remove());
+    const cs = this.cards(), n = cs.length;
+    [cs[n-1], cs[n-2]].forEach(c => { const k = c.cloneNode(true); k.dataset.clone = '1'; r.prepend(k); });
+    [cs[0], cs[1]].forEach(c => { const k = c.cloneNode(true); k.dataset.clone = '1'; r.append(k); });
+    this.applySrcModes();
+  }
+  recenter(tries){
+    const r = this.rail.current; if (!r || this.userMoved) return;
+    const real = this.cards().filter(c => !c.dataset.clone); if (!real.length) return;
+    const target = () => Math.round(real[0].offsetLeft - (r.clientWidth - real[0].clientWidth) / 2);
+    r.scrollLeft = target();
+    this.updateScale();
+    if (tries > 0) setTimeout(() => {
+      if (!this.userMoved && Math.abs(r.scrollLeft - target()) > 2) this.recenter(tries - 1);
+      else this.updateScale();
+    }, 200);
+  }
+  normalize(){
+    const r = this.rail.current; if (!r) return;
+    const real = this.cards().filter(c => !c.dataset.clone), n = real.length; if (n < 2) return;
+    const period = n * (real[1].offsetLeft - real[0].offsetLeft);
+    const cf = c => c.offsetLeft - (r.clientWidth - c.clientWidth) / 2;
+    if (r.scrollLeft < cf(real[0]) - 8) r.scrollLeft += period;
+    else if (r.scrollLeft > cf(real[n-1]) + 8) r.scrollLeft -= period;
+    this.updateScale();
+  }
+  step(dir){ if (this.rail.current) this.goTo(this.centerIndex() + dir); }
+  updateScale(){
+    const r = this.rail.current; if (!r) return;
+    const mid = r.scrollLeft + r.clientWidth / 2;
+    this.cards().forEach(c => {
+      const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid) / r.clientWidth;
+      const t = Math.min(d * 1.6, 1);
+      c.style.transform = 'scale(' + (1 - t * .24).toFixed(4) + ')';
+      c.style.opacity = (1 - t * .5).toFixed(3);
+    });
+  }
+  bindRail(){
+    const r = this.rail.current;
+    if (!r){ setTimeout(() => this.bindRail(), 200); return; }
+    if (r.dataset.bound) return;
+    r.dataset.bound = '1';
+    r.addEventListener('scroll', () => requestAnimationFrame(() => this.updateScale()), {passive: true});
+    r.addEventListener('click', e => {
+      const b = e.target.closest('[data-opt]'); if (!b) return;
+      const w = b.closest('[data-srcsel]');
+      if (w) this.setSrcMode(w.dataset.srcsel, b.dataset.opt);
+    });
+    this.applySrcModes();
+    addEventListener('resize', () => this.updateScale());
+    this.setupLoop();
+  }
+  componentDidUpdate(){ this.applySrcModes(); }
+  renderVals(){
+    return {
+      railRef: this.rail,
+      setEs: () => this.setLang('es'),
+      setEn: () => this.setLang('en'),
+      prev: () => this.step(-1),
+      next: () => this.step(1)
+    };
+  }
+}
+</script>
+</body>
+</html>
