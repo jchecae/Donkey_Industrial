@@ -1,0 +1,15 @@
+{
+  "name": "donkey-industrial",
+  "version": "1.0.0",
+  "description": "DONKEY Industrial — Estudio industrial de producto en Granada",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests configured'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  },
+  "devDependencies": {},
+  "private": true
+}
