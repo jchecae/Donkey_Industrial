@@ -10,8 +10,9 @@
 <helmet>
 <meta name="description" content="DONKEY Industrial — Estudio industrial de producto en Granada. Ingeniería aplicada, diseño industrial, utillaje y prototipado.">
 <style>
+*,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#f8faf8;color:#24282f;font:16px/1.45 "Archivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;overflow-x:hidden;background:#f8faf8;color:#24282f;font:16px/1.45 "Archivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 ::selection{background:#b86a3d;color:#f8faf8}
 a{color:inherit;text-decoration:none}
 a:hover{color:inherit}
@@ -51,16 +52,16 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
       </div>
     </div>
     <div style="flex:.82 1 340px;min-width:min(100%,340px);position:relative;min-height:520px;overflow:hidden;border-left:1px solid rgba(36,40,47,.18);background:#24282f;color:#f8faf8" style-before="content:'';position:absolute;inset:28px;border:1px solid rgba(248,250,248,.25)">
-      <span style="position:absolute;top:44px;right:45px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">REF. DI-001 / 0.15</span>
-      <div style="position:absolute;top:50%;left:50%;width:min(31vw,440px);aspect-ratio:1;transform:translate(-48%,-44%) rotate(-21deg);border:1px solid rgba(248,250,248,.8);border-radius:10px;background:linear-gradient(116deg,transparent 48%,#f8faf8 48.3% 49%,transparent 49.3%),radial-gradient(circle at 68% 32%,#859f56 0 5%,transparent 5.3%),radial-gradient(circle at 34% 69%,#b86a3d 0 11%,transparent 11.3%)" style-before="content:'';position:absolute;top:29%;left:29%;width:42%;height:42%;border:1px solid #f8faf8;border-radius:50%"></div>
-      <p data-t="caption" style="position:absolute;bottom:43px;left:43px;max-width:210px;margin:0;color:rgba(248,250,248,.75);font-size:11px">Imagen de prototipo / taller / detalle técnico. Sustituir por imagen propia.</p>
+      <span style="position:absolute;top:44px;right:45px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;z-index:2">REF. DI-001 / 0.15</span>
+      <img src="assets/portada.webp" alt="Despiece técnico" style="position:absolute;inset:28px;width:calc(100% - 56px);height:calc(100% - 56px);object-fit:contain;object-position:center">
+      <p data-t="caption" style="position:absolute;bottom:43px;left:43px;max-width:210px;margin:0;color:rgba(248,250,248,.75);font-size:11px;z-index:2">Imagen de prototipo / taller / detalle técnico. Sustituir por imagen propia.</p>
     </div>
   </section>
   <section id="capacidades" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
     <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">01<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
     <div style="flex:1 1 620px;min-width:min(100%,620px)">
       <h2 data-h="ctitle" style="max-width:900px;margin:0 0 36px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Un sistema de capacidades para llevar una idea <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">hasta la realidad.</span></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
         <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">01 / DI</b><h3 data-t="c1" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Diseño industrial y desarrollo de producto.&nbsp;<br>Identidad de marca</h3><p data-t="c1p" style="margin:0;color:#68716d;font-size:13px">Marca, función, forma y fabricación pensados como un conjunto.</p></article>
         <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">02 / CAD</b><h3 data-t="c2" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Ingeniería aplicada, CAD 3D y software</h3><p data-t="c2p" style="margin:0;color:#68716d;font-size:13px">Modelado, conjuntos, mecanismos y herramientas de software propias para tomar decisiones con base.</p></article>
         <article style="min-height:205px;padding:21px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:40px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">03 / PRT</b><h3 data-t="c3" style="margin:0 0 8px;font-size:18px;font-weight:700;line-height:1.1;letter-spacing:-.028em">Prototipado rápido</h3><p data-t="c3p" style="margin:0;color:#68716d;font-size:13px">Piezas y ensayos de concepto para aprender antes de comprometer fabricación.</p></article>
@@ -79,13 +80,12 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
         <p data-t="tp2" style="flex:1 1 340px;max-width:520px;margin:0;color:#68716d;font-size:15px;line-height:1.5">Venimos del utillaje y del desarrollo de producto: fixtures, soportes y soluciones que tienen que funcionar un lunes a las siete. Y cuando el producto lo pide, cuidamos también la capa de marca: nombre, gráfica aplicada e imagen.</p>
       </div>
       <h3 data-t="teq" style="margin:0 0 14px;color:#b86a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Medios y taller</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
-        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-01</b><h3 data-t="eq1" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Escáner 3D</h3><p data-t="eq1p" style="margin:0;color:#68716d;font-size:13px">Captura de geometría real: piezas, moldes y entornos.</p></article>
-        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-02</b><h3 data-t="eq2" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Impresión 3D</h3><p data-t="eq2p" style="margin:0;color:#68716d;font-size:13px">FDM y resina para prototipos, útiles y preseries cortas.</p></article>
-        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-03</b><h3 data-t="eq3" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">CAD paramétrico</h3><p data-t="eq3p" style="margin:0;color:#68716d;font-size:13px">Modelado, ensamblajes y planos de fabricación.</p></article>
-        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-04</b><h3 data-t="eq4" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Render de producto</h3><p data-t="eq4p" style="margin:0;color:#68716d;font-size:13px">Imagen para decidir y comunicar antes de fabricar.</p></article>
-        <article style="min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-05</b><h3 data-t="eq5" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Red de mecanizado</h3><p data-t="eq5p" style="margin:0;color:#68716d;font-size:13px">Proveedores de CNC, corte, chapa y acabados.</p></article>
-        
+      <div style="display:flex;flex-wrap:wrap;gap:1px;border:1px solid rgba(36,40,47,.18);background:rgba(36,40,47,.18)">
+        <article style="flex:1 1 240px;min-width:0;min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-01</b><h3 data-t="eq1" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">CAD paramétrico</h3><p data-t="eq1p" style="margin:0;color:#68716d;font-size:13px">Modelado, ensamblajes y planos de fabricación.</p></article>
+        <article style="flex:1 1 240px;min-width:0;min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-02</b><h3 data-t="eq2" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Render de producto</h3><p data-t="eq2p" style="margin:0;color:#68716d;font-size:13px">Imagen para decidir y comunicar antes de fabricar.</p></article>
+        <article style="flex:1 1 240px;min-width:0;min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-03</b><h3 data-t="eq3" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Impresión 3D</h3><p data-t="eq3p" style="margin:0;color:#68716d;font-size:13px">FDM y resina para prototipos, útiles y preseries cortas.</p></article>
+        <article style="flex:1 1 240px;min-width:0;min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-04</b><h3 data-t="eq4" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Escáner 3D</h3><p data-t="eq4p" style="margin:0;color:#68716d;font-size:13px">Captura de geometría real: piezas, moldes y entornos.</p></article>
+        <article style="flex:1 1 240px;min-width:0;min-height:140px;padding:18px 20px;background:#f8faf8" style-hover="background:#e9ede8"><b style="display:block;margin-bottom:22px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.09em">EQ-05</b><h3 data-t="eq5" style="margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.024em">Red de mecanizado</h3><p data-t="eq5p" style="margin:0;color:#68716d;font-size:13px">Proveedores de CNC, corte, chapa y acabados.</p></article>
       </div>
       <h3 data-t="texp" style="margin:52px 0 0;color:#b86a3d;font-size:10px;font-weight:800;line-height:1.1;letter-spacing:.11em;text-transform:uppercase">Experiencia</h3>
       <div style="margin-top:14px;border-top:1px solid #24282f">
@@ -97,7 +97,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
       <span data-t="inv" style="display:inline-block;margin-top:26px;padding:6px 9px;border:1px solid rgba(36,40,47,.35);color:#68716d;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Inventario · REV 0</span>
     </div>
   </section>
-  <section id="proyectos" style="display:flex;flex-wrap:wrap;gap:32px;padding:clamp(82px,10vw,160px) 0;border-bottom:1px solid rgba(36,40,47,.18);scroll-margin-top:84px">
+  <section id="proyectos" style="display: flex; flex-wrap: wrap; gap: 32px; padding: clamp(82px,10vw,160px) 0; border-bottom: 1px solid rgba(36,40,47,.18); scroll-margin-top: 84px">
     <div style="flex:0 0 200px;color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">03<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
     <div style="flex:1 1 620px;min-width:min(100%,620px)">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
@@ -107,27 +107,29 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
           <button onClick="{{next}}" aria-label="Siguiente" style="width:44px;height:44px;border:1px solid #24282f;background:transparent;cursor:pointer;font-family:inherit;font-size:16px;color:#24282f" style-hover="background:#e9ede8">→</button>
         </div>
       </div>
-      <div ref="{{railRef}}" data-rail="" style="position:relative;display:flex;align-items:center;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px calc((100% - min(540px,72%)) / 2) 28px;scrollbar-width:none">
-        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-01" shape="rect" placeholder="Foto real: utillaje o fixture en uso" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
-          <figcaption style="padding:16px 18px 20px"><span data-t="w1t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Utillaje / Fixture</span><p data-t="w1" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Fixture de posicionado y amarre para verificación/fabricación de pieza.<br></p><div data-srcsel="work-01" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+      <div data-viewport="" style="overflow:hidden;position:relative;padding:26px 0 32px">
+        <div ref="{{trackRef}}" data-track="" style="display:flex;align-items:center;gap:28px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform">
+        <figure data-card="" style="flex:0 0 clamp(320px,52%,760px);min-width:0;margin:0;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transform-origin:center;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s">
+          <img src="assets/w3.webp" alt="Prototipo funcional" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9ede8">
+          <figcaption style="padding:16px 18px 20px"><span data-t="w2t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Prototipo</span><p data-t="w2" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Prototipo funcional impreso para validar montaje y tolerancias antes de comprometer molde.</p><div data-srcsel="work-02" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
         </figure>
-        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-02" shape="rect" placeholder="Foto real: prototipo impreso" style="display: block; width: 100%; height: 350px" hint-size="100%,320px"></x-import>
-          <figcaption style="padding:16px 18px 20px"><span data-t="w2t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Prototipo</span><p data-t="w2" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Prototipo funcional impreso&nbsp; para validar montaje y tolerancias antes de comprometer molde.</p><div data-srcsel="work-02" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
-        </figure>
-        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-03" shape="rect" placeholder="Foto real: escaneo 3D de pieza" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
-          <figcaption style="padding:16px 18px 20px"><span data-t="w3t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Escaneo 3D</span><p data-t="w3" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Captura de geometría real de una pieza existente para ingeniería inversa y adaptación.</p><div data-srcsel="work-03" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
-        </figure>
-        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-04" shape="rect" placeholder="Imagen: render de producto" style="display:block;width:100%;height:320px" hint-size="100%,320px"></x-import>
+        <figure data-card="" style="flex:0 0 clamp(320px,52%,760px);min-width:0;margin:0;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transform-origin:center;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s">
+          <img src="assets/w2.webp" alt="Render de producto" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9ede8">
           <figcaption style="padding:16px 18px 20px"><span data-t="w4t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Render</span><p data-t="w4" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Render de producto para decidir acabados y comunicar antes de fabricar.</p><div data-srcsel="work-04" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
         </figure>
-        <figure data-card="" style="flex:0 0 min(540px,72%);margin:0;scroll-snap-align:center;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transition:transform .3s ease,opacity .3s ease">
-          
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-05" shape="rect" placeholder="Imagen: identidad gráfica de producto" style="display: block; height: 350px; width: 100%" hint-size="100%,320px"></x-import><figcaption style="padding:16px 18px 20px"><span data-t="w5t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Identidad gráfica</span><p data-t="w5" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Identidad gráfica: naming y gráfica aplicada a la identidad corporativa.</p><div data-srcsel="work-05" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        <figure data-card="" style="flex:0 0 clamp(320px,52%,760px);min-width:0;margin:0;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transform-origin:center;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s">
+          <img src="assets/w4.webp" alt="Identidad gráfica de producto" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9ede8">
+          <figcaption style="padding:16px 18px 20px"><span data-t="w5t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Identidad gráfica</span><p data-t="w5" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Identidad gráfica: naming y gráfica aplicada a la identidad corporativa.</p><div data-srcsel="work-05" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
         </figure>
+        <figure data-card="" style="flex:0 0 clamp(320px,52%,760px);min-width:0;margin:0;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transform-origin:center;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s">
+          <img src="assets/w5.webp" alt="Escaneo 3D de pieza" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9ede8">
+          <figcaption style="padding:16px 18px 20px"><span data-t="w3t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Escaneo 3D</span><p data-t="w3" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Captura de geometría real de una pieza existente para ingeniería inversa y adaptación.</p><div data-srcsel="work-03" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        <figure data-card="" style="flex:0 0 clamp(320px,52%,760px);min-width:0;margin:0;border:1px solid rgba(36,40,47,.18);background:#f8faf8;transform-origin:center;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s">
+          <img src="assets/w1.webp" alt="Utillaje o fixture en uso" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9ede8">
+          <figcaption style="padding:16px 18px 20px"><span data-t="w1t" style="color:#b86a3d;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Utillaje / Fixture</span><p data-t="w1" style="margin:7px 0 0;color:#68716d;font-size:13px;line-height:1.45">Fixture de posicionado y amarre para verificación/fabricación de pieza.</p><div data-srcsel="work-01" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px"><div style="display:inline-flex;border:1px solid rgba(36,40,47,.35)"><button data-opt="real" style="border:0;background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">REAL</button><button data-opt="ia" style="border:0;border-left:1px solid rgba(36,40,47,.35);background:transparent;cursor:pointer;padding:6px 12px;font-family:inherit;font-size:10px;font-weight:800;letter-spacing:.08em;color:#68716d">IA</button></div><span data-note="" style="flex:1;min-width:150px;color:#68716d;font-size:11px;font-style:italic"></span></div></figcaption>
+        </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -144,21 +146,23 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
     </div>
   </section>
 </div>
-<section id="contacto" style="position:relative;overflow:hidden;padding:clamp(88px,12vw,170px) 0 56px;background:#24282f;color:#f8faf8" style-after="content:'';position:absolute;right:-9vw;bottom:-33vw;width:min(47vw,680px);aspect-ratio:1;border:1px solid rgba(248,250,248,.25);border-radius:50%">
+<section id="contacto" style="position:relative;overflow:hidden;padding:clamp(88px,12vw,170px) 0 56px;background:#24282f;color:#f8faf8">
+
   <div style="position:relative;z-index:1;width:min(calc(100% - 48px),1440px);margin:auto;display:flex;flex-wrap:wrap;gap:32px">
     <div style="flex:0 0 200px;color:#859f56;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">05<span style="display:inline-block;width:43px;height:1px;margin:0 0 3px 9px;background:currentColor"></span></div>
-    <div style="flex:1 1 620px;min-width:min(100%,620px)">
+    <div style="flex: 1 1 620px; min-width: min(100%,620px); position: relative">
       <h2 data-h="contact" style="max-width:780px;margin:0 0 24px;font-size:clamp(37px,4.2vw,68px);font-weight:700;letter-spacing:-.042em;line-height:.98">Si hay una cosa que debe funcionar, merece empezar <span style="font-family:Georgia,'Times New Roman',serif;font-weight:400;font-style:italic;color:#b86a3d">bien pensada.</span></h2>
       <p data-t="contactp" style="max-width:500px;margin:0;color:rgba(248,250,248,.68);font-size:18px">DONKEY Industrial trabaja desde Granada, con proyectos que no dependen demasiado del código postal.</p>
       <a href="mailto:hola@donkeyindustrial.com" style="display:inline-block;margin-top:34px;padding-bottom:6px;border-bottom:1px solid #b86a3d;font-size:clamp(21px,2.7vw,38px);letter-spacing:-.03em" style-hover="color:#859f56;border-bottom-color:#859f56">hola@donkeyindustrial.com</a>
-      <div style="display:flex;flex-wrap:wrap;gap:11px 24px;margin-top:66px;color:rgba(248,250,248,.55);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase"><span data-t="place">Granada / Andalucía / España</span><span data-t="services">Ingeniería aplicada · Diseño industrial · Prototipado</span></div>
-    </div>
+      <div style="display:flex;flex-wrap:wrap;gap:11px 24px;margin-top:66px;color:rgba(248,250,248,.55);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase"><span data-t="place">Granada / Andalucía / España</span><span data-t="services">Ingeniería aplicada · Diseño industrial · Prototipado</span></div></div>
   </div>
+  <div style="position:absolute;right:0;bottom:0;z-index:0;width:min(280px,46vw);aspect-ratio:22/25;overflow:hidden;pointer-events:none"><img src="assets/burro.png" alt="DONKEY Industrial" style="display:block;width:241.4%;max-width:none;margin:0 0 0 -6.82%;opacity:.9"></div>
 </section>
 </main>
-<footer style="padding:34px 0 26px;background:#24282f;color:#f8faf8">
+<div style="position:relative">
+<footer style="padding: 34px 0 26px; background: #24282f; color: #f8faf8; position: relative;z-index:1">
   <div style="width:min(calc(100% - 48px),1440px);margin:auto">
-    <div style="margin:8px 0 30px;font-size:clamp(38px,7.4vw,130px);font-weight:800;letter-spacing:-.045em;line-height:.85;white-space:nowrap">DONKEY <span style="font-weight: 500; font-family: Helvetica; font-size: 0.8em">INDUSTRIAL</span></div>
+    <div style="margin:8px 0 30px;font-size:clamp(30px,8vw,130px);font-weight:800;letter-spacing:-.045em;line-height:.85;white-space:nowrap">DONKEY <span style="font-weight: 500; font-family: Helvetica; font-size: 0.8em">INDUSTRIAL</span></div>
     <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(248,250,248,.2);font-size:11px">
       <span data-t="descf" style="font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase">Estudio industrial de producto</span>
       <span data-t="claim" style="color:rgba(248,250,248,.58);font:italic 14px Georgia,'Times New Roman',serif">Bien pensado. Bien resuelto.</span>
@@ -166,12 +170,15 @@ button:focus-visible,a:focus-visible{outline:2px solid #859f56;outline-offset:4p
     </div>
   </div>
 </footer>
+<div style="position:absolute;right:0;bottom:0;z-index:2;width:clamp(216px,29vw,456px);aspect-ratio:22/25;overflow:hidden;pointer-events:none"><img src="assets/burro.png" alt="DONKEY Industrial" style="display:block;width:241.4%;max-width:none;margin:0 0 0 -6.82%;opacity:.9"></div>
+</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Idioma&quot;},&quot;selectorVisible&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Carrusel&quot;}}">
 class Component extends DCLogic {
   constructor(props){
     super(props);
     this.rail = React.createRef();
+    this.track = React.createRef();
     this.originals = null;
     const S = '<span style="font-family:Georgia,\'Times New Roman\',serif;font-weight:400;font-style:italic;color:#b86a3d">';
     this.EN = {
@@ -194,12 +201,11 @@ class Component extends DCLogic {
       tp1:'DONKEY Industrial is an applied engineering and industrial design studio based in Granada. We scan, model, print, render and assemble in-house; whatever calls for machining, cutting or finishing goes out to a proven network of suppliers.',
       tp2:'We come from jigs and product development: fixtures, supports and solutions that have to work on a Monday at seven. And when the product calls for it, we also take care of the brand layer: name, applied graphics and image.',
       teq:'Equipment & workshop',
-      eq1:'3D scanner', eq1p:'Capture of real geometry: parts, moulds and environments.',
-      eq2:'3D printing', eq2p:'FDM and resin for prototypes, jigs and short pre-series.',
-      eq3:'Parametric CAD', eq3p:'Modelling, assemblies and manufacturing drawings.',
-      eq4:'Product rendering', eq4p:'Images to decide and communicate before manufacturing.',
+      eq1:'Parametric CAD', eq1p:'Modelling, assemblies and manufacturing drawings.',
+      eq2:'Product rendering', eq2p:'Images to decide and communicate before manufacturing.',
+      eq3:'3D printing', eq3p:'FDM and resin for prototypes, jigs and short pre-series.',
+      eq4:'3D scanner', eq4p:'Capture of real geometry: parts, moulds and environments.',
       eq5:'Machining network', eq5p:'CNC, cutting, sheet-metal and finishing suppliers.',
-      eq6:'Assembly bench', eq6p:'Tooling, functional testing and fine adjustment.',
       texp:'Experience',
       ex1:'Jigs and fixtures', ex1p:'Positioning, clamping, verification and poka-yoke.',
       ex2:'Product development', ex2p:'From requirement to pre-series.',
@@ -229,7 +235,7 @@ class Component extends DCLogic {
     l.rel = 'stylesheet';
     l.href = 'https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap';
     document.head.appendChild(l);
-    this.bindRail();
+    this.initCarousel();
     if ((this.props.defaultLang ?? 'es') === 'en') setTimeout(() => this.setLang('en'), 0);
   }
   setLang(lng){
@@ -251,7 +257,6 @@ class Component extends DCLogic {
     document.documentElement.lang = lng;
     document.title = lng === 'en' ? 'DONKEY Industrial — Well thought. Well resolved.' : 'DONKEY Industrial — Bien pensado. Bien resuelto.';
   }
-  cards(){ return this.rail.current ? [...this.rail.current.querySelectorAll('[data-card]')] : []; }
   applySrcModes(){
     const modes = JSON.parse(localStorage.getItem('donkey-src-mode') || '{}');
     const N = (this.lang || 'es') === 'en'
@@ -275,95 +280,64 @@ class Component extends DCLogic {
     localStorage.setItem('donkey-src-mode', JSON.stringify(s));
     this.applySrcModes();
   }
-  centerIndex(){
-    const r = this.rail.current, mid = r.scrollLeft + r.clientWidth / 2;
-    let best = 0, bd = 1e9;
-    this.cards().forEach((c, i) => {
-      const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid);
-      if (d < bd){ bd = d; best = i; }
-    });
-    return best;
-  }
-  goTo(i){
-    const r = this.rail.current, cs = this.cards(); if (!r || !cs.length) return;
-    const c = cs[Math.max(0, Math.min(cs.length - 1, i))];
-    r.scrollTo({left: c.offsetLeft - (r.clientWidth - c.clientWidth) / 2, behavior: 'smooth'});
-  }
-  setupLoop(){
-    const r = this.rail.current, cs = this.cards();
-    if (!r || r.dataset.loop) return;
-    if (cs.length < 2 || !cs[0].querySelector('image-slot')){ setTimeout(() => this.setupLoop(), 200); return; }
-    r.dataset.loop = '1';
-    this.buildClones();
-    ['pointerdown','wheel','touchstart'].forEach(ev => r.addEventListener(ev, () => this.userMoved = true, {passive: true, once: true}));
-    r.addEventListener('drop', () => setTimeout(() => this.buildClones(), 500));
-    if ('onscrollend' in r) r.addEventListener('scrollend', () => this.normalize());
-    else r.addEventListener('scroll', () => { clearTimeout(this._nt); this._nt = setTimeout(() => this.normalize(), 140); }, {passive: true});
-    this.recenter(8);
-    addEventListener('load', () => this.recenter(4));
-  }
-  buildClones(){
-    const r = this.rail.current; if (!r) return;
-    r.querySelectorAll('[data-clone]').forEach(c => c.remove());
-    const cs = this.cards(), n = cs.length;
-    [cs[n-1], cs[n-2]].forEach(c => { const k = c.cloneNode(true); k.dataset.clone = '1'; r.prepend(k); });
-    [cs[0], cs[1]].forEach(c => { const k = c.cloneNode(true); k.dataset.clone = '1'; r.append(k); });
-    this.applySrcModes();
-  }
-  recenter(tries){
-    const r = this.rail.current; if (!r || this.userMoved) return;
-    const real = this.cards().filter(c => !c.dataset.clone); if (!real.length) return;
-    const target = () => Math.round(real[0].offsetLeft - (r.clientWidth - real[0].clientWidth) / 2);
-    r.scrollLeft = target();
-    this.updateScale();
-    if (tries > 0) setTimeout(() => {
-      if (!this.userMoved && Math.abs(r.scrollLeft - target()) > 2) this.recenter(tries - 1);
-      else this.updateScale();
-    }, 200);
-  }
-  normalize(){
-    const r = this.rail.current; if (!r) return;
-    const real = this.cards().filter(c => !c.dataset.clone), n = real.length; if (n < 2) return;
-    const period = n * (real[1].offsetLeft - real[0].offsetLeft);
-    const cf = c => c.offsetLeft - (r.clientWidth - c.clientWidth) / 2;
-    if (r.scrollLeft < cf(real[0]) - 8) r.scrollLeft += period;
-    else if (r.scrollLeft > cf(real[n-1]) + 8) r.scrollLeft -= period;
-    this.updateScale();
-  }
-  step(dir){ if (this.rail.current) this.goTo(this.centerIndex() + dir); }
-  updateScale(){
-    const r = this.rail.current; if (!r) return;
-    const mid = r.scrollLeft + r.clientWidth / 2;
-    this.cards().forEach(c => {
-      const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - mid) / r.clientWidth;
-      const t = Math.min(d * 1.6, 1);
-      c.style.transform = 'scale(' + (1 - t * .24).toFixed(4) + ')';
-      c.style.opacity = (1 - t * .5).toFixed(3);
-    });
-  }
-  bindRail(){
-    const r = this.rail.current;
-    if (!r){ setTimeout(() => this.bindRail(), 200); return; }
-    if (r.dataset.bound) return;
-    r.dataset.bound = '1';
-    r.addEventListener('scroll', () => requestAnimationFrame(() => this.updateScale()), {passive: true});
-    r.addEventListener('click', e => {
+  all(){ return this.track.current ? [...this.track.current.querySelectorAll('[data-card]')] : []; }
+  initCarousel(){
+    const track = this.track.current;
+    if (!track){ setTimeout(() => this.initCarousel(), 150); return; }
+    if (track.dataset.init) return;
+    const reals = [...track.querySelectorAll('[data-card]')];
+    if (reals.length < 2 || !reals[0].querySelector('img')){ setTimeout(() => this.initCarousel(), 150); return; }
+    track.dataset.init = '1';
+    this.n = reals.length; this.C = 2; this.pos = this.C;
+    const mk = c => { const k = c.cloneNode(true); k.dataset.clone = '1'; return k; };
+    reals.slice(this.n - this.C).reverse().forEach(c => track.prepend(mk(c)));
+    reals.slice(0, this.C).forEach(c => track.append(mk(c)));
+    const vp = track.parentElement;
+    vp.addEventListener('click', e => {
       const b = e.target.closest('[data-opt]'); if (!b) return;
-      const w = b.closest('[data-srcsel]');
-      if (w) this.setSrcMode(w.dataset.srcsel, b.dataset.opt);
+      const w = b.closest('[data-srcsel]'); if (w) this.setSrcMode(w.dataset.srcsel, b.dataset.opt);
     });
+    track.addEventListener('transitionend', e => {
+      if (e.target !== track || e.propertyName !== 'transform') return;
+      this._anim = false; this.wrapCheck();
+    });
+    vp.addEventListener('pointerenter', () => this._hover = true);
+    vp.addEventListener('pointerleave', () => this._hover = false);
+    addEventListener('resize', () => this.center(false));
+    track.querySelectorAll('[data-card] img').forEach(im => { if (!im.complete) im.addEventListener('load', () => this.center(false), {once: true}); });
     this.applySrcModes();
-    addEventListener('resize', () => this.updateScale());
-    this.setupLoop();
+    [0, 60, 200, 400, 800].forEach(ms => setTimeout(() => this.center(false), ms));
+    this._timer = setInterval(() => { if (!this._hover && !document.hidden) this.nextSlide(); }, 5500);
   }
-  componentDidUpdate(){ this.applySrcModes(); }
+  center(animate){
+    const track = this.track.current; if (!track) return;
+    const cards = this.all(), c = cards[this.pos]; if (!c) return;
+    const vp = track.parentElement;
+    const offset = Math.round(vp.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2));
+    track.style.transition = animate ? '' : 'none';
+    track.style.transform = 'translateX(' + offset + 'px)';
+    if (!animate){ void track.offsetWidth; track.style.transition = ''; }
+    cards.forEach((el, i) => {
+      const on = i === this.pos;
+      el.style.transform = on ? 'scale(1)' : 'scale(.82)';
+      el.style.opacity = on ? '1' : '.5';
+    });
+  }
+  wrapCheck(){
+    if (this.pos >= this.C + this.n){ this.pos -= this.n; this.center(false); }
+    else if (this.pos < this.C){ this.pos += this.n; this.center(false); }
+  }
+  nextSlide(){ if (this._anim) return; this._anim = true; this.pos++; this.center(true); this._guard(); }
+  prevSlide(){ if (this._anim) return; this._anim = true; this.pos--; this.center(true); this._guard(); }
+  _guard(){ clearTimeout(this._sf); this._sf = setTimeout(() => { this._anim = false; this.wrapCheck(); }, 700); }
+  componentDidUpdate(){ this.applySrcModes(); if (this.track.current && this.track.current.dataset.init && !this._anim) this.center(false); }
   renderVals(){
     return {
-      railRef: this.rail,
+      trackRef: this.track,
       setEs: () => this.setLang('es'),
       setEn: () => this.setLang('en'),
-      prev: () => this.step(-1),
-      next: () => this.step(1)
+      prev: () => this.prevSlide(),
+      next: () => this.nextSlide()
     };
   }
 }
