@@ -233,13 +233,14 @@ textarea:focus-visible {
 
 .hero-mark img {
   position: absolute;
-  top: 12px;
-  left: 5%;
-  width: 154%;
+  top: 50%;
+  left: 0;
+  width: 128%;
   max-width: none;
   object-fit: contain;
   object-position: left top;
   filter: saturate(0.88);
+  transform: translateY(-50%);
 }
 
 .hero-mark span {
@@ -869,9 +870,9 @@ textarea:focus-visible {
   }
 
   .hero-mark img {
-    top: 12px;
-    left: 7%;
-    width: 132%;
+    top: 50%;
+    left: 0;
+    width: 108%;
   }
 
   .contact-sheet {
