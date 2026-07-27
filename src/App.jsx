@@ -141,7 +141,7 @@ export function App() {
         </div>
 
         <div className="hero-mark" aria-hidden="true">
-          <img src="/assets/donkey.png" alt="" />
+          <img src="/assets/burro-original.png" alt="" />
           <span>DONKEY INDUSTRIAL / ARCHIVO DE CAMPO</span>
         </div>
       </section>
