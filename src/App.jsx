@@ -13,48 +13,48 @@ const clientOutcomes = [
     title: "Saber si merece la pena",
     summary: "Viabilidad, riesgos y coste antes de abrir un proyecto completo.",
     detail:
-      "Aterrizamos funciÃ³n, usuario, fabricaciÃ³n y restricciones para decidir quÃ© conviene resolver, quÃ© puede esperar y dÃ³nde estÃ¡ el riesgo real.",
+      "Aterrizamos función, usuario, fabricación y restricciones para decidir qué conviene resolver, qué puede esperar y dónde está el riesgo real.",
   },
   {
     number: "02",
     title: "Probar antes de comprometer",
     summary: "Un prototipo que permite decidir con las manos, no solo con renders.",
     detail:
-      "Comprobamos ergonomÃ­a, mecanismos, montaje y tolerancias antes de comprometer inversiÃ³n, utillaje o una preserie.",
+      "Comprobamos ergonomía, mecanismos, montaje y tolerancias antes de comprometer inversión, utillaje o una preserie.",
   },
   {
     number: "03",
     title: "Llegar a taller con respuestas",
-    summary: "DocumentaciÃ³n clara para fabricar, presupuestar y evolucionar.",
+    summary: "Documentación clara para fabricar, presupuestar y evolucionar.",
     detail:
-      "Entregamos CAD, planos, especificaciones y criterios de validaciÃ³n listos para hablar con proveedores y fabricaciÃ³n.",
+      "Entregamos CAD, planos, especificaciones y criterios de validación listos para hablar con proveedores y fabricación.",
   },
 ];
 
 const projects = [
   {
-    code: "FIG 01 â€” PROTOTIPO",
+    code: "FIG 01 — PROTOTIPO",
     title: "Prototipo funcional",
     copy:
-      "Una soluciÃ³n fÃ­sica para comprobar uso, montaje y decisiones crÃ­ticas antes de fabricar.",
-    image: "/assets/prototype.jpg",
+      "Una solución física para comprobar uso, montaje y decisiones críticas antes de fabricar.",
+    image: "/assets/w3.png",
     alt: "Prototipo funcional desarrollado por DONKEY Industrial",
   },
   {
-    code: "FIG 02 â€” DIGITALIZACIÃ“N",
-    title: "Escaneado y reconstrucciÃ³n",
+    code: "FIG 02 — DIGITALIZACIÓN",
+    title: "Escaneado y reconstrucción",
     copy:
-      "GeometrÃ­a real convertida en informaciÃ³n Ãºtil para rediseÃ±ar, verificar o reproducir.",
-    image: "/assets/scan.jpg",
+      "Geometría real convertida en información útil para rediseñar, verificar o reproducir.",
+    image: "/assets/w5.png",
     alt: "Escaneado tridimensional de una pieza industrial",
   },
   {
-    code: "FIG 03 â€” UTILLAJE",
-    title: "Fixture de verificaciÃ³n",
+    code: "FIG 03 — UTILLAJE",
+    title: "Fixture de verificación",
     copy:
-      "Posicionado repetible, menos preparaciÃ³n y una operaciÃ³n que ya no depende de la mano del operario.",
-    image: "/assets/fixture.jpg",
-    alt: "Fixture industrial de verificaciÃ³n diseÃ±ado por DONKEY Industrial",
+      "Posicionado repetible, menos preparación y una operación que ya no depende de la mano del operario.",
+    image: "/assets/w1.png",
+    alt: "Fixture industrial de verificación diseñado por DONKEY Industrial",
   },
 ];
 
@@ -88,7 +88,7 @@ export function App() {
           <strong>DONKEY</strong> Industrial
         </a>
 
-        <nav className="desktop-nav" aria-label="NavegaciÃ³n principal">
+        <nav className="desktop-nav" aria-label="Navegación principal">
           <NavLink href="#archivo">Proyectos</NavLink>
           <NavLink href="#proceso">Proceso</NavLink>
           <NavLink href="#marco">Marco</NavLink>
@@ -98,7 +98,7 @@ export function App() {
         <button
           className="menu-button"
           type="button"
-          aria-label={menuOpen ? "Cerrar menÃº" : "Abrir menÃº"}
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((value) => !value)}
         >
@@ -106,7 +106,7 @@ export function App() {
         </button>
 
         {menuOpen && (
-          <nav className="mobile-nav" aria-label="NavegaciÃ³n mÃ³vil">
+          <nav className="mobile-nav" aria-label="Navegación móvil">
             <NavLink href="#archivo" onClick={closeMenu}>Proyectos</NavLink>
             <NavLink href="#proceso" onClick={closeMenu}>Proceso</NavLink>
             <NavLink href="#marco" onClick={closeMenu}>Marco</NavLink>
@@ -121,12 +121,12 @@ export function App() {
           <h1>
             Del <br className="mobile-only" />problema <br className="mobile-only" />real
             <br />
-            a una <br className="mobile-only" />soluciÃ³n <br className="mobile-only" />que
+            a una <br className="mobile-only" />solución <br className="mobile-only" />que
             <br />
             <em>aguanta.</em>
           </h1>
           <p>
-            DiseÃ±amos, prototipamos y validamos
+            Diseñamos, prototipamos y validamos
             <br className="desktop-break" /> antes de fabricar.
           </p>
           <div className="hero-actions">
@@ -141,7 +141,7 @@ export function App() {
         </div>
 
         <div className="hero-mark" aria-hidden="true">
-          <img src="/assets/burro-original.png" alt="" />
+          <img src="/assets/burro.png" alt="" />
           <span>DONKEY INDUSTRIAL / ARCHIVO DE CAMPO</span>
         </div>
       </section>
@@ -232,8 +232,8 @@ export function App() {
             <em>el mismo lenguaje.</em>
           </h2>
           <p>
-            Un marco visual y formal convierte cada lanzamiento en una extensiÃ³n
-            reconocible de la misma idea. Menos decisiones repetidas, mÃ¡s
+            Un marco visual y formal convierte cada lanzamiento en una extensión
+            reconocible de la misma idea. Menos decisiones repetidas, más
             coherencia y una familia capaz de crecer.
           </p>
 
@@ -244,7 +244,7 @@ export function App() {
             </div>
             <div>
               <dt>Coherencia</dt>
-              <dd>Forma, color, grÃ¡fica y documentaciÃ³n responden al mismo criterio.</dd>
+              <dd>Forma, color, gráfica y documentación responden al mismo criterio.</dd>
             </div>
             <div>
               <dt>Escala</dt>
@@ -256,8 +256,8 @@ export function App() {
         <div className="identity-proof" aria-label="Evidencias de marca y producto">
           <article className="identity-panel">
             <img
-              src="/assets/identity.jpg"
-              alt="Sistema de identidad grÃ¡fica aplicado por DONKEY Industrial"
+              src="/assets/w4.png"
+              alt="Sistema de identidad gráfica aplicado por DONKEY Industrial"
               decoding="async"
             />
             <div className="identity-caption">
@@ -269,8 +269,8 @@ export function App() {
 
           <article className="identity-panel">
             <img
-              src="/assets/render.jpg"
-              alt="Lenguaje formal aplicado al diseÃ±o de producto"
+              src="/assets/w2.png"
+              alt="Lenguaje formal aplicado al diseño de producto"
               decoding="async"
             />
             <div className="identity-caption">
@@ -284,10 +284,10 @@ export function App() {
       <section className="contact-section" id="contacto" aria-labelledby="contact-title">
         <div className="contact-intro">
           <span className="section-code section-code-light">ENCARGO / 01</span>
-          <h2 id="contact-title">Â¿QuÃ© tiene que<br />funcionar?</h2>
+          <h2 id="contact-title">¿Qué tiene que<br />funcionar?</h2>
           <p>
-            CuÃ©ntanos el contexto, las restricciones y en quÃ© punto estÃ¡ la
-            idea. La primera conversaciÃ³n sirve para ordenar el problema.
+            Cuéntanos el contexto, las restricciones y en qué punto está la
+            idea. La primera conversación sirve para ordenar el problema.
           </p>
           <a href="mailto:hola@donkeyindustrial.com">
             hola@donkeyindustrial.com
@@ -299,9 +299,9 @@ export function App() {
             <div className="success-state" role="status">
               <CheckCircle size={40} weight="fill" aria-hidden="true" />
               <span>RECIBIDO / REV. 01</span>
-              <h3>El problema ya estÃ¡ sobre la mesa.</h3>
+              <h3>El problema ya está sobre la mesa.</h3>
               <p>
-                Este prototipo no envÃ­a datos. La experiencia final conectarÃ­a
+                Este prototipo no envía datos. La experiencia final conectaría
                 este paso con el canal de contacto elegido.
               </p>
               <button className="text-link text-link-light" type="button" onClick={() => setSubmitted(false)}>
@@ -323,7 +323,7 @@ export function App() {
                 <textarea
                   name="problem"
                   rows="4"
-                  placeholder="QuÃ© debe hacer, dÃ³nde se usa y quÃ© estÃ¡ fallando ahora."
+                  placeholder="Qué debe hacer, dónde se usa y qué está fallando ahora."
                   required
                 />
               </label>
@@ -338,7 +338,7 @@ export function App() {
 
       <footer className="site-footer">
         <strong>DONKEY Industrial</strong>
-        <span>Granada / EspaÃ±a</span>
+        <span>Granada / España</span>
         <a href="#inicio">Volver arriba</a>
       </footer>
     </main>

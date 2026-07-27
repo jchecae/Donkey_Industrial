@@ -536,7 +536,7 @@ textarea:focus-visible {
 }
 
 .identity-panel:last-child img {
-  object-position: center center;
+  object-position: center 78%;
 }
 
 .identity-panel:hover img {
