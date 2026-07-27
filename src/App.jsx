@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   CheckCircle,
@@ -66,19 +66,75 @@ function NavLink({ href, children, onClick }) {
   );
 }
 
+function createRequestId() {
+  return globalThis.crypto?.randomUUID?.()
+    ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
 export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [activeProject, setActiveProject] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+  const [submissionState, setSubmissionState] = useState("idle");
+  const [submissionError, setSubmissionError] = useState("");
+  const [confirmationSent, setConfirmationSent] = useState(false);
+  const formStartedAt = useRef(Date.now());
+  const requestId = useRef(createRequestId());
 
   function closeMenu() {
     setMenuOpen(false);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setSubmissionState("sending");
+    setSubmissionError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          problem: formData.get("problem"),
+          company: formData.get("company"),
+          startedAt: formStartedAt.current,
+          requestId: requestId.current,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.message
+            || "No hemos podido enviar el mensaje. Inténtalo de nuevo.",
+        );
+      }
+
+      setConfirmationSent(Boolean(result.confirmationSent));
+      setSubmissionState("success");
+      form.reset();
+    } catch (error) {
+      setSubmissionError(
+        error.message
+          || "No hemos podido enviar el mensaje. También puedes escribirnos por email.",
+      );
+      setSubmissionState("error");
+    }
+  }
+
+  function resetContactForm() {
+    formStartedAt.current = Date.now();
+    requestId.current = createRequestId();
+    setSubmissionError("");
+    setConfirmationSent(false);
+    setSubmissionState("idle");
   }
 
   return (
@@ -295,28 +351,57 @@ export function App() {
         </div>
 
         <div className="contact-form-wrap">
-          {submitted ? (
+          {submissionState === "success" ? (
             <div className="success-state" role="status">
               <CheckCircle size={40} weight="fill" aria-hidden="true" />
               <span>RECIBIDO / REV. 01</span>
               <h3>El problema ya está sobre la mesa.</h3>
               <p>
-                Este prototipo no envía datos. La experiencia final conectaría
-                este paso con el canal de contacto elegido.
+                El mensaje se ha enviado a DONKEY Industrial. Te responderemos
+                al correo indicado.
               </p>
-              <button className="text-link text-link-light" type="button" onClick={() => setSubmitted(false)}>
+              {confirmationSent && (
+                <p>También te hemos enviado una confirmación de recepción.</p>
+              )}
+              <button className="text-link text-link-light" type="button" onClick={resetContactForm}>
                 Volver al formulario
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit={handleSubmit}
+              aria-busy={submissionState === "sending"}
+            >
+              <label className="honeypot-field" aria-hidden="true">
+                Empresa
+                <input
+                  name="company"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
               <label>
                 Nombre
-                <input name="name" autoComplete="name" required />
+                <input
+                  name="name"
+                  autoComplete="name"
+                  minLength={2}
+                  maxLength={80}
+                  disabled={submissionState === "sending"}
+                  required
+                />
               </label>
               <label>
                 Email
-                <input name="email" type="email" autoComplete="email" required />
+                <input
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  maxLength={254}
+                  disabled={submissionState === "sending"}
+                  required
+                />
               </label>
               <label>
                 El problema
@@ -324,11 +409,25 @@ export function App() {
                   name="problem"
                   rows="4"
                   placeholder="Qué debe hacer, dónde se usa y qué está fallando ahora."
+                  minLength={20}
+                  maxLength={4000}
+                  disabled={submissionState === "sending"}
                   required
                 />
               </label>
-              <button className="button button-light" type="submit">
-                Ponerlo sobre la mesa
+              {submissionError && (
+                <p className="form-error" role="alert">
+                  {submissionError}
+                </p>
+              )}
+              <button
+                className="button button-light"
+                type="submit"
+                disabled={submissionState === "sending"}
+              >
+                {submissionState === "sending"
+                  ? "Enviando el encargo…"
+                  : "Ponerlo sobre la mesa"}
                 <ArrowRight size={18} weight="bold" aria-hidden="true" />
               </button>
             </form>

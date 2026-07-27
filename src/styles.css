@@ -627,6 +627,22 @@ textarea:focus-visible {
   width: min(100%, 560px);
 }
 
+.contact-form-wrap form {
+  position: relative;
+}
+
+.honeypot-field {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .contact-form-wrap label {
   display: block;
   margin-bottom: 24px;
@@ -672,6 +688,20 @@ textarea:focus-visible {
 .button-light:hover {
   background: var(--oxide);
   color: #fff;
+}
+
+.button-light:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.form-error {
+  margin: -4px 0 18px;
+  padding-left: 14px;
+  border-left: 3px solid var(--oxide);
+  color: var(--bone);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .success-state {
