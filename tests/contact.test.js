@@ -5,6 +5,7 @@ import handler from "../api/contact.js";
 const originalFetch = globalThis.fetch;
 const originalEnv = {
   RESEND_API_KEY: process.env.RESEND_API_KEY,
+  resend_RESEND_API_KEY: process.env.resend_RESEND_API_KEY,
   CONTACT_TO: process.env.CONTACT_TO,
   CONTACT_FROM: process.env.CONTACT_FROM,
   CONTACT_CONFIRMATION_ENABLED: process.env.CONTACT_CONFIRMATION_ENABLED,
@@ -92,12 +93,30 @@ test("requires a realistically completed form", async () => {
 
 test("returns a clear error when Resend is not configured", async () => {
   delete process.env.RESEND_API_KEY;
+  delete process.env.resend_RESEND_API_KEY;
 
   const response = createResponse();
   await handler(validRequest(), response);
 
   assert.equal(response.statusCode, 503);
   assert.match(response.payload.message, /no está configurado/i);
+});
+
+test("accepts the Vercel Marketplace-prefixed Resend key", async () => {
+  delete process.env.RESEND_API_KEY;
+  process.env.resend_RESEND_API_KEY = "re_marketplace_test";
+
+  globalThis.fetch = async () =>
+    new Response(JSON.stringify({ id: "email_marketplace_123" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+
+  const response = createResponse();
+  await handler(validRequest(), response);
+
+  assert.equal(response.statusCode, 200);
+  assert.equal(response.payload.id, "email_marketplace_123");
 });
 
 test("sends a validated notification with reply-to and idempotency", async () => {

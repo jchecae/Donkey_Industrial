@@ -8,7 +8,9 @@ mediante Resend.
 
 Configurar en Vercel para `Preview` y `Production`:
 
-- `RESEND_API_KEY`: clave privada de Resend.
+- `RESEND_API_KEY`: clave privada de Resend. La función también reconoce
+  `resend_RESEND_API_KEY`, el nombre prefijado que puede crear la integración
+  nativa de Resend en Vercel Marketplace.
 - `CONTACT_TO`: correo que recibirá los encargos.
 - `CONTACT_FROM`: remitente de un dominio verificado.
 - `CONTACT_CONFIRMATION_ENABLED`: `true` para enviar también una confirmación

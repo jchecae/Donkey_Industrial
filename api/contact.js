@@ -233,13 +233,14 @@ export default async function handler(request, response) {
     });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey =
+    process.env.RESEND_API_KEY || process.env.resend_RESEND_API_KEY;
   const contactTo = process.env.CONTACT_TO || "hola@donkeyindustrial.com";
   const contactFrom =
     process.env.CONTACT_FROM || "DONKEY Industrial <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.error("[api/contact] RESEND_API_KEY is not configured");
+    console.error("[api/contact] Resend API key is not configured");
     return sendJson(response, 503, {
       ok: false,
       message: "El canal todavía no está configurado. Escríbenos directamente por email.",
