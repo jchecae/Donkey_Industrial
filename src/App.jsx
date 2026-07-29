@@ -1,0 +1,445 @@
+
+import { useRef, useState } from "react";
+import {
+  ArrowRight,
+  CheckCircle,
+  List,
+  X,
+} from "@phosphor-icons/react";
+
+const clientOutcomes = [
+  {
+    number: "01",
+    title: "Saber si merece la pena",
+    summary: "Viabilidad, riesgos y coste antes de abrir un proyecto completo.",
+    detail:
+      "Aterrizamos función, usuario, fabricación y restricciones para decidir qué conviene resolver, qué puede esperar y dónde está el riesgo real.",
+  },
+  {
+    number: "02",
+    title: "Probar antes de comprometer",
+    summary: "Un prototipo que permite decidir con las manos, no solo con renders.",
+    detail:
+      "Comprobamos ergonomía, mecanismos, montaje y tolerancias antes de comprometer inversión, utillaje o una preserie.",
+  },
+  {
+    number: "03",
+    title: "Llegar a taller con respuestas",
+    summary: "Documentación clara para fabricar, presupuestar y evolucionar.",
+    detail:
+      "Entregamos CAD, planos, especificaciones y criterios de validación listos para hablar con proveedores y fabricación.",
+  },
+];
+
+const projects = [
+  {
+    code: "FIG 01 — PROTOTIPO",
+    title: "Prototipo funcional",
+    copy:
+      "Una solución física para comprobar uso, montaje y decisiones críticas antes de fabricar.",
+    image: "/assets/w3.png",
+    alt: "Prototipo funcional desarrollado por DONKEY Industrial",
+  },
+  {
+    code: "FIG 02 — DIGITALIZACIÓN",
+    title: "Escaneado y reconstrucción",
+    copy:
+      "Geometría real convertida en información útil para rediseñar, verificar o reproducir.",
+    image: "/assets/w5.png",
+    alt: "Escaneado tridimensional de una pieza industrial",
+  },
+  {
+    code: "FIG 03 — UTILLAJE",
+    title: "Fixture de verificación",
+    copy:
+      "Posicionado repetible, menos preparación y una operación que ya no depende de la mano del operario.",
+    image: "/assets/w1.png",
+    alt: "Fixture industrial de verificación diseñado por DONKEY Industrial",
+  },
+];
+
+function NavLink({ href, children, onClick }) {
+  return (
+    <a className="nav-link" href={href} onClick={onClick}>
+      {children}
+    </a>
+  );
+}
+
+function createRequestId() {
+  return globalThis.crypto?.randomUUID?.()
+    ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+export function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [activeProject, setActiveProject] = useState(0);
+  const [submissionState, setSubmissionState] = useState("idle");
+  const [submissionError, setSubmissionError] = useState("");
+  const [confirmationSent, setConfirmationSent] = useState(false);
+  const formStartedAt = useRef(Date.now());
+  const requestId = useRef(createRequestId());
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setSubmissionState("sending");
+    setSubmissionError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          problem: formData.get("problem"),
+          company: formData.get("company"),
+          startedAt: formStartedAt.current,
+          requestId: requestId.current,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.message
+            || "No hemos podido enviar el mensaje. Inténtalo de nuevo.",
+        );
+      }
+
+      setConfirmationSent(Boolean(result.confirmationSent));
+      setSubmissionState("success");
+      form.reset();
+    } catch (error) {
+      setSubmissionError(
+        error.message
+          || "No hemos podido enviar el mensaje. También puedes escribirnos por email.",
+      );
+      setSubmissionState("error");
+    }
+  }
+
+  function resetContactForm() {
+    formStartedAt.current = Date.now();
+    requestId.current = createRequestId();
+    setSubmissionError("");
+    setConfirmationSent(false);
+    setSubmissionState("idle");
+  }
+
+  return (
+    <main className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#inicio" aria-label="DONKEY Industrial, inicio">
+          <strong>DONKEY</strong> Industrial
+        </a>
+
+        <nav className="desktop-nav" aria-label="Navegación principal">
+          <NavLink href="#archivo">Proyectos</NavLink>
+          <NavLink href="#proceso">Proceso</NavLink>
+          <NavLink href="#marco">Marco</NavLink>
+          <NavLink href="#contacto">Contacto</NavLink>
+        </nav>
+
+        <button
+          className="menu-button"
+          type="button"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((value) => !value)}
+        >
+          {menuOpen ? <X size={24} /> : <List size={24} />}
+        </button>
+
+        {menuOpen && (
+          <nav className="mobile-nav" aria-label="Navegación móvil">
+            <NavLink href="#archivo" onClick={closeMenu}>Proyectos</NavLink>
+            <NavLink href="#proceso" onClick={closeMenu}>Proceso</NavLink>
+            <NavLink href="#marco" onClick={closeMenu}>Marco</NavLink>
+            <NavLink href="#contacto" onClick={closeMenu}>Contacto</NavLink>
+          </nav>
+        )}
+      </header>
+
+      <section className="hero" id="inicio">
+        <div className="hero-copy">
+          <span className="section-code">DI / CUADERNO 01</span>
+          <h1>
+            Del <br className="mobile-only" />problema <br className="mobile-only" />real
+            <br />
+            a una <br className="mobile-only" />solución <br className="mobile-only" />que
+            <br />
+            <em>aguanta.</em>
+          </h1>
+          <p>
+            Diseñamos, prototipamos y validamos
+            <br className="desktop-break" /> antes de fabricar.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#contacto">
+              Empezar un proyecto
+              <ArrowRight size={18} weight="bold" aria-hidden="true" />
+            </a>
+            <a className="text-link" href="#archivo">
+              Explorar el archivo
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-mark" aria-hidden="true">
+          <img src="/assets/burro.png" alt="" />
+          <span>DONKEY INDUSTRIAL / ARCHIVO DE CAMPO</span>
+        </div>
+      </section>
+
+      <section
+        className="contact-sheet"
+        id="archivo"
+        aria-labelledby="archivo-title"
+        data-active={activeProject}
+      >
+        <h2 className="sr-only" id="archivo-title">Archivo de proyectos</h2>
+        {projects.map((project, index) => {
+          const isActive = activeProject === index;
+          return (
+            <article
+              className={`project-frame ${isActive ? "is-active" : ""}`}
+              key={project.code}
+              tabIndex="0"
+              role="button"
+              aria-pressed={isActive}
+              aria-label={`${project.title}. ${project.copy}`}
+              onPointerEnter={() => setActiveProject(index)}
+              onFocus={() => setActiveProject(index)}
+              onClick={() => setActiveProject(index)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setActiveProject(index);
+                }
+              }}
+            >
+              <img src={project.image} alt={project.alt} decoding="async" />
+              <div className="project-overlay">
+                <span>{project.code}</span>
+                <h3>{project.title}</h3>
+                <p>{project.copy}</p>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      <section className="process-section" id="proceso" aria-labelledby="process-title">
+        <aside className="process-index">
+          <span>Antes de fabricar</span>
+          <strong>03</strong>
+          <p>Decisiones<br />concretas<br />menos riesgo</p>
+        </aside>
+
+        <div className="process-content">
+          <h2 className="sr-only" id="process-title">Tres respuestas antes de fabricar</h2>
+
+          <div className="process-list">
+            {clientOutcomes.map((step, index) => {
+              const isActive = activeStep === index;
+              return (
+                <button
+                  className={`process-row ${isActive ? "is-active" : ""}`}
+                  key={step.number}
+                  type="button"
+                  aria-expanded={isActive}
+                  onClick={() => setActiveStep(index)}
+                >
+                  <span className="process-number">{step.number}</span>
+                  <strong>{step.title}</strong>
+                  <span className="process-copy">
+                    {isActive ? step.detail : step.summary}
+                  </span>
+                  <ArrowRight
+                    className="process-arrow"
+                    size={22}
+                    weight="bold"
+                    aria-hidden="true"
+                  />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="identity-section" id="marco" aria-labelledby="identity-title">
+        <div className="identity-copy">
+          <span className="section-code">MARCO / 04</span>
+          <h2 id="identity-title">
+            Marca y producto,
+            <br />
+            <em>el mismo lenguaje.</em>
+          </h2>
+          <p>
+            Un marco visual y formal convierte cada lanzamiento en una extensión
+            reconocible de la misma idea. Menos decisiones repetidas, más
+            coherencia y una familia capaz de crecer.
+          </p>
+
+          <dl className="identity-values">
+            <div>
+              <dt>Reconocimiento</dt>
+              <dd>Se identifica antes de leer el logotipo.</dd>
+            </div>
+            <div>
+              <dt>Coherencia</dt>
+              <dd>Forma, color, gráfica y documentación responden al mismo criterio.</dd>
+            </div>
+            <div>
+              <dt>Escala</dt>
+              <dd>Nuevas variantes parten de un sistema, no de cero.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="identity-proof" aria-label="Evidencias de marca y producto">
+          <article className="identity-panel">
+            <img
+              src="/assets/w4.png"
+              alt="Sistema de identidad gráfica aplicado por DONKEY Industrial"
+              decoding="async"
+            />
+            <div className="identity-caption">
+              <span>01 / MARCA</span>
+              <strong>Una voz propia</strong>
+              <p>Hace visible la promesa y mejora el recuerdo.</p>
+            </div>
+          </article>
+
+          <article className="identity-panel">
+            <img
+              src="/assets/w2.png"
+              alt="Lenguaje formal aplicado al diseño de producto"
+              decoding="async"
+            />
+            <div className="identity-caption">
+              <span>02 / PRODUCTO</span>
+              <strong>Una familia reconocible</strong>
+              <p>Acelera decisiones y protege la coherencia al crecer.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="contact-section" id="contacto" aria-labelledby="contact-title">
+        <div className="contact-intro">
+          <span className="section-code section-code-light">ENCARGO / 01</span>
+          <h2 id="contact-title">¿Qué tiene que<br />funcionar?</h2>
+          <p>
+            Cuéntanos el contexto, las restricciones y en qué punto está la
+            idea. La primera conversación sirve para ordenar el problema.
+          </p>
+          <a href="mailto:hola@donkeyindustrial.com">
+            hola@donkeyindustrial.com
+          </a>
+        </div>
+
+        <div className="contact-form-wrap">
+          {submissionState === "success" ? (
+            <div className="success-state" role="status">
+              <CheckCircle size={40} weight="fill" aria-hidden="true" />
+              <span>RECIBIDO / REV. 01</span>
+              <h3>El problema ya está sobre la mesa.</h3>
+              <p>
+                El mensaje se ha enviado a DONKEY Industrial. Te responderemos
+                al correo indicado.
+              </p>
+              {confirmationSent && (
+                <p>También te hemos enviado una confirmación de recepción.</p>
+              )}
+              <button className="text-link text-link-light" type="button" onClick={resetContactForm}>
+                Volver al formulario
+              </button>
+            </div>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              aria-busy={submissionState === "sending"}
+            >
+              <label className="honeypot-field" aria-hidden="true">
+                Empresa
+                <input
+                  name="company"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+              <label>
+                Nombre
+                <input
+                  name="name"
+                  autoComplete="name"
+                  minLength={2}
+                  maxLength={80}
+                  disabled={submissionState === "sending"}
+                  required
+                />
+              </label>
+              <label>
+                Email
+                <input
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  maxLength={254}
+                  disabled={submissionState === "sending"}
+                  required
+                />
+              </label>
+              <label>
+                El problema
+                <textarea
+                  name="problem"
+                  rows="4"
+                  placeholder="Qué debe hacer, dónde se usa y qué está fallando ahora."
+                  minLength={20}
+                  maxLength={4000}
+                  disabled={submissionState === "sending"}
+                  required
+                />
+              </label>
+              {submissionError && (
+                <p className="form-error" role="alert">
+                  {submissionError}
+                </p>
+              )}
+              <button
+                className="button button-light"
+                type="submit"
+                disabled={submissionState === "sending"}
+              >
+                {submissionState === "sending"
+                  ? "Enviando el encargo…"
+                  : "Ponerlo sobre la mesa"}
+                <ArrowRight size={18} weight="bold" aria-hidden="true" />
+              </button>
+            </form>
+          )}
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <strong>DONKEY Industrial</strong>
+        <span>Granada / España</span>
+        <a href="#inicio">Volver arriba</a>
+      </footer>
+    </main>
+  );
+}
